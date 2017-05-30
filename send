@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -q production
+#PBS -N dodecConst8
+#PBS -l select=8:ncpus=1
+#PBS -l place=free
+#PBS -V
+echo "Starting..."
+
+cd $PBS_O_WORKDIR
+
+mpirun -np 8 ./a.out
+
+echo "Job is done!!!"
